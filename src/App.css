@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+*::before, *::after {
+  box-sizing: border-box;
   }
+
+ body{
+  margin: 0%;
+  padding: 0%;
+ } 
+
+.container{
+  
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 25px 1fr auto;
+  grid-template-areas: "Header optionBar" "ImageStyle optionBar" "slider optionBar";
+  height: 100vh;
+  width: 100vw;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.Header{
+  grid-area: Header;
+}
+
+.ImageStyle{
+  grid-area: ImageStyle;
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 2rem;
+}
+
+
+.optionBar{
+  grid-area: optionBar;
+  background-color: hsl(265, 100%, 82%);
+  display : flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: stretch;
+
 }
 
-.App-link {
-  color: #61dafb;
+.option-item{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: hsl(265, 100%, 82%);
+  padding: 2rem;
+  position: relative;
+  transition: background-color 200ms;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option-item:hover , .option-item:focus{
+  background-color: hsl(265, 100%, 70%);
+}
+
+.option-item.active{
+  background-color: hsl(265, 100%, 60%);
+}
+
+.SlideBarStyle{
+  grid-area: slider;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.slider{
+  width: 100%;
+  cursor: pointer;
+}
+
+
+#domEl {
+  position: relative;
+  height: 230px;
+  width: 500px;
+  padding: 20px;
+  background: #fff4f4;
+  border: 1px solid #ddd;
 }
