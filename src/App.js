@@ -89,7 +89,7 @@ function App() {
  
   // download image
   const link = document.createElement('a');
-  link.download = "html-to-img.png";
+  link.download = "Edited.png";
   link.href = dataUrl;
   link.click();
   }
@@ -100,12 +100,13 @@ function App() {
     <div className="container">
        
       <h2 className='Header'>Add an Image   <input  type="file" onChange={handleChange}></input></h2>
-      <div className="ImageStyle" style={setStyle()}>
-      <div className="ImageStyle" id='domEL' ref={domEl} style={{backgroundImage : `url(${file})`}}> 
-
+      <div className="ImageStyle" style={setStyle()}  ref={domEl}>
+      <div className="ImageStyle" id='domEL'  style={{backgroundImage : `url(${file})`}}> 
+        
        </div>
       </div>
-      <button onClick={handledownload}>Download</button>
+      <button style={{height:"3rem" , marginLeft:"28%" ,width:"50%" , backgroundColor:"hsl(265, 100%, 70%)"} } onClick={handledownload}>Download</button>
+      
 
       
       <div className='optionBar'> 
